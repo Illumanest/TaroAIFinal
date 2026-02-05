@@ -93,7 +93,7 @@ async def get_ai_reading(prompt):
 
 # --- ХЕНДЛЕРЫ ---
 
-@@dp.message(Command("start"))
+@dp.message(Command("start"))
 async def start_cmd(message: types.Message):
     # Твой новый текст приветствия
     welcome_text = (
@@ -182,4 +182,5 @@ async def main():
 if __name__ == "__main__":
 
     asyncio.run(main())
+
 
