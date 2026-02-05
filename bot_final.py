@@ -13,7 +13,7 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder, ReplyKeyboardBuilder
 BOT_TOKEN = "8557375398:AAF0rafVTVUQmT7fUn68L0afBYOKW8NxsjM"
 GROQ_API_KEY = "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"
 ADMIN_USERNAME = "Natalya_golovickaya"
-
+DEV_USERNAME = "illumanest"
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
 groq_client = AsyncGroq(api_key=GROQ_API_KEY)
@@ -157,7 +157,7 @@ async def start_cmd(message: types.Message):
 
 @dp.message(Command("debug"))
 async def debug_cmd(message: types.Message):
-    if message.from_user.username != ADMIN_USERNAME:
+    if message.from_user.username != DEV_USERNAME:
         return
     kb = InlineKeyboardBuilder()
     kb.button(text="Старшие Арканы", callback_data="debug_cat_major")
@@ -255,3 +255,4 @@ async def main():
 if __name__ == "__main__":
 
     asyncio.run(main())
+
