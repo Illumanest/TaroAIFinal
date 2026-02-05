@@ -93,11 +93,22 @@ async def get_ai_reading(prompt):
 
 # --- ХЕНДЛЕРЫ ---
 
-@dp.message(Command("start"))
+@@dp.message(Command("start"))
 async def start_cmd(message: types.Message):
+    # Твой новый текст приветствия
+    welcome_text = (
+        "✨ **Доброго дня, дорогой друг! Рада видеть тебя в нашем пространстве** ✨\n\n"
+        "Что тебя беспокоит? Что тебе сейчас важно? Что ты хочешь узнать? "
+        "Как ты себя чувствуешь? Какую задачу хочешь решить?\n\n"
+        "🔮 **Мысленно задай свой вопрос или попроси совета, и карты помогут тебе!**\n"
+        "Просто сердцем выбери нужный расклад.\n\n"
+        "🤝 _Если хочешь, чтобы я лично тебе помогла, выбери личный расклад, и напиши мне._"
+    )
+    
     await message.answer(
-        "Рада видеть тебя. Выбери расклад в меню ниже.",
-        reply_markup=get_main_menu()
+        welcome_text,
+        reply_markup=get_main_menu(),
+        parse_mode="Markdown"
     )
 
 
@@ -171,3 +182,4 @@ async def main():
 if __name__ == "__main__":
 
     asyncio.run(main())
+
