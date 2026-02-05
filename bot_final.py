@@ -23,8 +23,8 @@ TAROT_DECK = {
     # Старшие Арканы
     "Шут": "https://upload.wikimedia.org/wikipedia/commons/9/90/RWS_Tarot_00_Fool.jpg",
     "Маг": "https://upload.wikimedia.org/wikipedia/commons/d/de/RWS_Tarot_01_Magician.jpg",
-    "Жрица": "https://upload.wikimedia.org/wikipedia/commons/8/8d/RWS_Tarot_02_High_Priestess.jpg",
-    "Императрица": "https://upload.wikimedia.org/wikipedia/commons/a/af/RWS_Tarot_03_Empress.jpg",
+    "Жрица": "https://avatars.mds.yandex.net/get-entity_search/2295215/1243844570/S600xU_2x",
+    "Императрица": "https://avatars.mds.yandex.net/get-entity_search/7980979/1230442980/S600xU_2x",
     "Император": "https://upload.wikimedia.org/wikipedia/commons/c/c3/RWS_Tarot_04_Emperor.jpg",
     "Иерофант": "https://upload.wikimedia.org/wikipedia/commons/8/8d/RWS_Tarot_05_Hierophant.jpg",
     "Влюбленные": "https://upload.wikimedia.org/wikipedia/commons/d/db/RWS_Tarot_06_Lovers.jpg",
@@ -41,19 +41,19 @@ TAROT_DECK = {
     "Звезда": "https://upload.wikimedia.org/wikipedia/commons/d/db/RWS_Tarot_17_Star.jpg",
     "Луна": "https://upload.wikimedia.org/wikipedia/commons/7/7f/RWS_Tarot_18_Moon.jpg",
     "Солнце": "https://upload.wikimedia.org/wikipedia/commons/1/17/RWS_Tarot_19_Sun.jpg",
-    "Суд": "https://upload.wikimedia.org/wikipedia/commons/d/d4/RWS_Tarot_20_Judgement.jpg",
+    "Суд": "https://avatars.mds.yandex.net/get-entity_search/4964907/1228608504/S600xU_2x",
     "Мир": "https://upload.wikimedia.org/wikipedia/commons/f/ff/RWS_Tarot_21_World.jpg",
     # Жезлы
     "Туз Жезлов": "https://upload.wikimedia.org/wikipedia/commons/1/11/Wands01.jpg",
     "Двойка Жезлов": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Wands02.jpg",
     "Тройка Жезлов": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Wands03.jpg",
     "Четверка Жезлов": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Wands04.jpg",
-    "Пятерка Жезлов": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Wands05.jpg",
+    "Пятерка Жезлов": "https://avatars.mds.yandex.net/i?id=457ab80829756c7b01f55abc3b7b11db_l-8199736-images-thumbs&n=13",
     "Шестерка Жезлов": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Wands06.jpg",
-    "Семерка Жезлов": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Wands07.jpg",
+    "Семерка Жезлов": "https://i.pinimg.com/736x/2a/46/08/2a4608fb9a3b0132c0c51a929e56f019.jpg",
     "Восьмерка Жезлов": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Wands08.jpg",
-    "Девятка Жезлов": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Wands09.jpg",
-    "Десятка Жезлов": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Wands10.jpg",
+    "Девятка Жезлов": "https://i.pinimg.com/736x/fe/6d/a1/fe6da1ab4cb0dd718e2a9223566b7546.jpg",
+    "Десятка Жезлов": "https://i.pinimg.com/originals/5d/ad/e4/5dade4eb375ef62f828189d5015ebbae.jpg",
     "Паж Жезлов": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Wands11.jpg",
     "Рыцарь Жезлов": "https://upload.wikimedia.org/wikipedia/commons/1/16/Wands12.jpg",
     "Королева Жезлов": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Wands13.jpg",
@@ -68,7 +68,7 @@ TAROT_DECK = {
     "Семерка Кубков": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Cups07.jpg",
     "Восьмерка Кубков": "https://upload.wikimedia.org/wikipedia/commons/6/60/Cups08.jpg",
     "Девятка Кубков": "https://upload.wikimedia.org/wikipedia/commons/2/24/Cups09.jpg",
-    "Десятка Кубков": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Cups10.jpg",
+    "Десятка Кубков": "https://i.pinimg.com/originals/61/9e/00/619e0051588eaa68249799e860dcaff1.jpg",
     "Паж Кубков": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Cups11.jpg",
     "Рыцарь Кубков": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Cups12.jpg",
     "Королева Кубков": "https://upload.wikimedia.org/wikipedia/commons/6/62/Cups13.jpg",
@@ -91,8 +91,8 @@ TAROT_DECK = {
     # Пентакли
     "Туз Пентаклей": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Pents01.jpg",
     "Двойка Пентаклей": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Pents02.jpg",
-    "Тройка Пентаклей": "https://upload.wikimedia.org/wikipedia/commons/4/41/Pents03.jpg",
-    "Четверка Пентаклей": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Pents04.jpg",
+    "Тройка Пентаклей": "https://i.pinimg.com/736x/10/88/89/10888965565b1f1e73638c83174f8835.jpg",
+    "Четверка Пентаклей": "https://i.pinimg.com/originals/e9/ed/8c/e9ed8cdd5bc44a66486d9c56cd9724d5.jpg",
     "Пятерка Пентаклей": "https://upload.wikimedia.org/wikipedia/commons/9/96/Pents05.jpg",
     "Шестерка Пентаклей": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Pents06.jpg",
     "Семерка Пентаклей": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Pents07.jpg",
@@ -255,4 +255,5 @@ async def main():
 if __name__ == "__main__":
 
     asyncio.run(main())
+
 
