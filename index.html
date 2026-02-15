@@ -3,165 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Оракул Наталья: Личный кабинет</title>
+    <title>Оракул Наталья: Кабинет</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
-        :root {
-            --primary: #7b68ee;
-            --gold: #ffd700;
-            --bg: #0f0f19;
-            --card-bg: rgba(255, 255, 255, 0.07);
-        }
-        body {
-            background-color: var(--bg);
-            color: white;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            margin: 0;
-            padding: 20px 20px 80px 20px;
-            text-align: center;
-        }
-        .card {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border-radius: 24px;
-            padding: 20px;
-            margin-bottom: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .balance-val {
-            font-size: 36px;
-            font-weight: 800;
-            margin: 10px 0;
-            color: var(--primary);
-        }
-        .vip-active { color: var(--gold) !important; text-shadow: 0 0 15px rgba(255, 215, 0, 0.3); }
-        
-        .btn {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 16px;
-            border-radius: 16px;
-            width: 100%;
-            font-size: 16px;
-            font-weight: 600;
-            margin: 8px 0;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .btn:active { transform: scale(0.97); opacity: 0.8; }
-        .btn-outline {
-            background: transparent;
-            border: 1px solid var(--primary);
-            color: var(--primary);
-        }
-        
-        /* Табы */
+        :root { --primary: #7b68ee; --gold: #ffd700; --bg: #0f0f19; --card-bg: rgba(255, 255, 255, 0.07); }
+        body { background: var(--bg); color: white; font-family: sans-serif; margin: 0; padding: 20px 20px 80px 20px; text-align: center; }
+        .card { background: var(--card-bg); border-radius: 20px; padding: 20px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.1); }
+        .balance-val { font-size: 32px; font-weight: bold; color: var(--primary); margin: 10px 0; }
+        .vip-active { color: var(--gold) !important; text-shadow: 0 0 10px rgba(255,215,0,0.3); }
+        .btn { background: var(--primary); color: white; border: none; padding: 15px; border-radius: 12px; width: 100%; font-size: 16px; font-weight: bold; margin: 5px 0; cursor: pointer; }
+        .btn-outline { background: transparent; border: 1px solid var(--primary); color: var(--primary); }
         .tab-content { display: none; }
-        .active-tab { display: block; animation: fadeIn 0.3s ease; }
-        
-        .nav-bar {
-            position: fixed;
-            bottom: 0; left: 0; right: 0;
-            background: #1c1c2e;
-            display: flex;
-            justify-content: space-around;
-            padding: 15px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .nav-item { font-size: 12px; opacity: 0.5; cursor: pointer; }
-        .nav-item.active-nav { opacity: 1; color: var(--primary); font-weight: bold; }
-
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .active-tab { display: block; }
+        .nav-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #1c1c2e; display: flex; justify-content: space-around; padding: 15px 0; border-top: 1px solid rgba(255,255,255,0.1); }
+        .nav-item { font-size: 12px; opacity: 0.5; }
+        .active-nav { opacity: 1; color: var(--primary); }
     </style>
 </head>
 <body>
 
     <div id="home" class="tab-content active-tab">
         <div class="card">
-            <div id="status_label">Доступно раскладов</div>
+            <div id="status_label">Доступно раскладов:</div>
             <div class="balance-val" id="balance_val">...</div>
-            <div id="expiry_box" style="display: none; font-size: 14px; opacity: 0.8;">
-                Подписка до: <span id="expiry_date" style="color: var(--gold);"></span>
-            </div>
+            <div id="expiry_box" style="display:none; font-size:14px; color:var(--gold);">VIP до: <span id="expiry_date"></span></div>
         </div>
-
         <div class="card">
-            <h3>🔮 Таинство Таро</h3>
-            <button class="btn" onclick="sendAction('draw_1')">🃏 Карта дня</button>
-            <button class="btn" onclick="sendAction('draw_3')">✨ Расклад на 3 карты</button>
+            <h3>🔮 Таинство</h3>
+            <button class="btn" onclick="sendAction('draw_1')">Карта дня</button>
+            <button class="btn" onclick="sendAction('draw_3')">Расклад на 3 карты</button>
         </div>
     </div>
 
     <div id="stats" class="tab-content">
         <div class="card">
-            <h3>📈 Аналитика судьбы</h3>
-            <p style="font-size: 14px; opacity: 0.8;">Наталья изучит ваши карты за последние 7 дней и даст глубокий совет.</p>
-            <button class="btn btn-outline" onclick="sendAction('get_weekly_analysis')">Получить анализ недели</button>
+            <h3>📈 Аналитика недели</h3>
+            <p style="font-size:14px; opacity:0.7;">Разбор вашей энергии за 7 дней. Доступно только VIP.</p>
+            <button class="btn btn-outline" onclick="checkVipAndAction('get_weekly_analysis')">Получить анализ</button>
         </div>
     </div>
 
     <div id="vip" class="tab-content">
         <div class="card" style="border-color: var(--gold);">
-            <h3 style="color: var(--gold);">👑 VIP Привилегии</h3>
-            <ul style="text-align: left; font-size: 14px; line-height: 1.6;">
-                <li>Бесконечные расклады</li>
-                <li>Глубокая аналитика недели</li>
-                <li>Приоритетные ответы ИИ</li>
-            </ul>
-            <button class="btn" style="background: var(--gold); color: black;" onclick="sendAction('sub_week')">Неделя — 99 ⭐</button>
-            <button class="btn" style="background: var(--gold); color: black;" onclick="sendAction('sub_month')">Месяц — 299 ⭐</button>
-            <button class="btn" style="background: var(--gold); color: black;" onclick="sendAction('sub_year')">Год — 1990 ⭐</button>
+            <h3 style="color: var(--gold);">👑 VIP Безлимит</h3>
+            <button class="btn" style="background:var(--gold); color:black;" onclick="sendAction('sub_week')">Неделя — 99 ⭐</button>
+            <button class="btn" style="background:var(--gold); color:black;" onclick="sendAction('sub_month')">Месяц — 299 ⭐</button>
+        </div>
+        <div class="card">
+            <h3>💎 Пополнить попытки</h3>
+            <button class="btn btn-outline" onclick="sendAction('buy_10')">10 попыток — 50 ⭐</button>
+            <button class="btn btn-outline" onclick="sendAction('buy_50')">50 попыток — 200 ⭐</button>
         </div>
     </div>
 
     <div class="nav-bar">
-        <div class="nav-item active-nav" id="nav-home" onclick="showTab('home')">🏠 Главная</div>
-        <div class="nav-item" id="nav-stats" onclick="showTab('stats')">📈 Аналитика</div>
-        <div class="nav-item" id="nav-vip" onclick="showTab('vip')">💎 VIP</div>
+        <div class="nav-item active-nav" id="n-home" onclick="showTab('home')">🏠 Главная</div>
+        <div class="nav-item" id="n-stats" onclick="showTab('stats')">📈 Аналитика</div>
+        <div class="nav-item" id="n-vip" onclick="showTab('vip')">💎 Магазин</div>
     </div>
 
     <script>
         let tg = window.Telegram.WebApp;
-        tg.expand();
-        tg.ready();
+        const params = new URLSearchParams(window.location.search);
+        const balance = params.get('bal');
+        const until = params.get('until');
 
-        // Считывание данных из URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const balance = urlParams.get('bal') || '0';
-        const until = urlParams.get('until');
-
-        // Настройка отображения баланса/VIP
-        const balEl = document.getElementById('balance_val');
-        balEl.innerText = balance;
-
-        if (balance === "Безлимит") {
-            balEl.classList.add('vip-active');
-            document.getElementById('status_label').innerText = "Ваш статус:";
-            if (until && until !== "None") {
+        document.getElementById('balance_val').innerText = balance;
+        if(balance === "Безлимит") {
+            document.getElementById('balance_val').classList.add('vip-active');
+            if(until && until !== "None") {
                 document.getElementById('expiry_box').style.display = 'block';
                 document.getElementById('expiry_date').innerText = until;
             }
         }
 
-        function showTab(tabId) {
-            // Скрыть все табы
+        function showTab(id) {
             document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active-tab'));
             document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active-nav'));
-            
-            // Показать нужный
-            document.getElementById(tabId).classList.add('active-tab');
-            document.getElementById('nav-' + tabId).classList.add('active-nav');
-            
-            // Легкая вибрация при переключении
-            if (tg.HapticFeedback) tg.HapticFeedback.impactOccurred('light');
+            document.getElementById(id).classList.add('active-tab');
+            document.getElementById('n-'+id).classList.add('active-nav');
         }
 
-        function sendAction(action) {
-            tg.sendData(action);
-            tg.close();
+        function checkVipAndAction(act) {
+            if(balance === "Безлимит") { sendAction(act); }
+            else { alert("Нужна VIP подписка!"); showTab('vip'); }
         }
+
+        function sendAction(a) { tg.sendData(a); tg.close(); }
     </script>
 </body>
 </html>
+    </script>
+</body>
+</html>
+
 
